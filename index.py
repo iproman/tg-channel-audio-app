@@ -16,6 +16,7 @@ class Ui_MainWindow(object):
         self.author = ''
         self.reader = ''
         self.genre = ''
+        self.duration = ''
         self.desc = ''
         self.add_desc = ''
 
@@ -49,6 +50,11 @@ class Ui_MainWindow(object):
         self.genreLabel.setFont(font)
         self.genreLabel.setObjectName("genreLabel")
 
+        self.durationLabel = QtWidgets.QLabel(self.centralwidget)
+        self.durationLabel.setGeometry(QtCore.QRect(70, 230, self.lwidth, self.lheight))
+        self.durationLabel.setFont(font)
+        self.durationLabel.setObjectName("durationLabel")
+
         self.descLabel = QtWidgets.QLabel(self.centralwidget)
         self.descLabel.setGeometry(QtCore.QRect(70, 230, 90, 25))
         self.descLabel.setFont(font)
@@ -59,11 +65,7 @@ class Ui_MainWindow(object):
         self.addDessLabel.setFont(font)
         self.addDessLabel.setObjectName("addDessLabel")
 
-        # Buttons
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(250, 390, 100, 30))
-        self.pushButton.setObjectName("pushButton")
-
+        # Inputs
         self.nameEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.nameEdit.setGeometry(QtCore.QRect(170, 30, 350, 25))
         self.nameEdit.setObjectName("nameEdit")
@@ -80,14 +82,25 @@ class Ui_MainWindow(object):
         self.genreEdit.setGeometry(QtCore.QRect(170, 180, 350, 25))
         self.genreEdit.setObjectName("genreEdit")
 
-        self.addDessEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.addDessEdit.setGeometry(QtCore.QRect(170, 320, 350, 25))
-        self.addDessEdit.setObjectName("addDessEdit")
+        self.durationEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.durationEdit.setGeometry(QtCore.QRect(170, 230, self.iwidth, self.iheigth))
+        self.durationEdit.setObjectName("durationEdit")
 
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(170, 230, 350, 70))
         self.textEdit.setObjectName("textEdit")
 
+        self.addDessEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.addDessEdit.setGeometry(QtCore.QRect(170, 370, self.iwidth, self.iheigth))
+        self.addDessEdit.setObjectName("addDessEdit")
+
+        # Buttons
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(250, 420, 100, 30))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.convert)
+
+        # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
@@ -107,6 +120,7 @@ class Ui_MainWindow(object):
         self.authorLabel.setText(_translate("MainWindow", "Автор:"))
         self.readlabel.setText(_translate("MainWindow", "Исполняет:"))
         self.genreLabel.setText(_translate("MainWindow", "Жанр:"))
+        self.durationLabel.setText(_translate("MainWindow", "Продолжительность:"))
         self.descLabel.setText(_translate("MainWindow", "Описание:"))
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
         self.pushButton.setText(_translate("MainWindow", "Подготовить"))
@@ -117,6 +131,7 @@ class Ui_MainWindow(object):
         self.author = self.authorEdit.text()
         self.reader = self.readEdit.text()
         self.genre = self.genreEdit.text()
+        self.duration = self.durationEdit.text()
         self.desc = self.textEdit.toPlainText()
         self.add_desc = self.addDessEdit.text()
 
@@ -137,6 +152,9 @@ class Ui_MainWindow(object):
         if self.genre:
             genre_input = "**Жанр**: %s\n" % self.genre
             text_file.write(genre_input)
+        if self.duration:
+            duration = "**Продолжительность**: %s\n" % self.duration
+            text_file.write(duration)
         if self.desc:
             desc_input = "\n**Описание**:\n%s\n" % self.desc
             text_file.write(desc_input)
