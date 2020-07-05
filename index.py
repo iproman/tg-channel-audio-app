@@ -14,11 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def __init__(self):
-        self.lwidth = 90
+        self.lwidth = 130
         self.lheight = 25
-
         self.iwidth = 350
         self.iheigth = 25
+
+        self.label_x = 50
+        self.input_x = 200
 
         self.name = ''
         self.author = ''
@@ -39,67 +41,67 @@ class Ui_MainWindow(object):
         font.setPointSize(9)
 
         self.nameLabel = QtWidgets.QLabel(self.centralwidget)
-        self.nameLabel.setGeometry(QtCore.QRect(70, 30, self.lwidth, self.lheight))
+        self.nameLabel.setGeometry(QtCore.QRect(self.label_x, 30, self.lwidth, self.lheight))
         self.nameLabel.setFont(font)
         self.nameLabel.setObjectName("nameLabel")
 
         self.authorLabel = QtWidgets.QLabel(self.centralwidget)
-        self.authorLabel.setGeometry(QtCore.QRect(70, 80, self.lwidth, self.lheight))
+        self.authorLabel.setGeometry(QtCore.QRect(self.label_x, 80, self.lwidth, self.lheight))
         self.authorLabel.setFont(font)
         self.authorLabel.setObjectName("authorLabel")
 
         self.readlabel = QtWidgets.QLabel(self.centralwidget)
-        self.readlabel.setGeometry(QtCore.QRect(70, 130, self.lwidth, self.lheight))
+        self.readlabel.setGeometry(QtCore.QRect(self.label_x, 130, self.lwidth, self.lheight))
         self.readlabel.setFont(font)
         self.readlabel.setObjectName("readlabel")
 
         self.genreLabel = QtWidgets.QLabel(self.centralwidget)
-        self.genreLabel.setGeometry(QtCore.QRect(70, 180, self.lwidth, self.lheight))
+        self.genreLabel.setGeometry(QtCore.QRect(self.label_x, 180, self.lwidth, self.lheight))
         self.genreLabel.setFont(font)
         self.genreLabel.setObjectName("genreLabel")
 
         self.durationLabel = QtWidgets.QLabel(self.centralwidget)
-        self.durationLabel.setGeometry(QtCore.QRect(70, 230, self.lwidth, self.lheight))
+        self.durationLabel.setGeometry(QtCore.QRect(self.label_x, 230, self.lwidth, self.lheight))
         self.durationLabel.setFont(font)
         self.durationLabel.setObjectName("durationLabel")
 
         self.descLabel = QtWidgets.QLabel(self.centralwidget)
-        self.descLabel.setGeometry(QtCore.QRect(70, 280, self.lwidth, self.lheight))
+        self.descLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
         self.descLabel.setFont(font)
         self.descLabel.setObjectName("descLabel")
 
         self.addDessLabel = QtWidgets.QLabel(self.centralwidget)
-        self.addDessLabel.setGeometry(QtCore.QRect(70, 370, self.lwidth, self.lheight))
+        self.addDessLabel.setGeometry(QtCore.QRect(self.label_x, 370, self.lwidth, self.lheight))
         self.addDessLabel.setFont(font)
         self.addDessLabel.setObjectName("addDessLabel")
 
         # Inputs
         self.nameEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.nameEdit.setGeometry(QtCore.QRect(170, 30, self.iwidth, self.iheigth))
+        self.nameEdit.setGeometry(QtCore.QRect(self.input_x, 30, self.iwidth, self.iheigth))
         self.nameEdit.setObjectName("nameEdit")
 
         self.authorEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.authorEdit.setGeometry(QtCore.QRect(170, 80, self.iwidth, self.iheigth))
+        self.authorEdit.setGeometry(QtCore.QRect(self.input_x, 80, self.iwidth, self.iheigth))
         self.authorEdit.setObjectName("authorEdit")
 
         self.readEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.readEdit.setGeometry(QtCore.QRect(170, 130, self.iwidth, self.iheigth))
+        self.readEdit.setGeometry(QtCore.QRect(self.input_x, 130, self.iwidth, self.iheigth))
         self.readEdit.setObjectName("readEdit")
 
         self.genreEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.genreEdit.setGeometry(QtCore.QRect(170, 180, self.iwidth, self.iheigth))
+        self.genreEdit.setGeometry(QtCore.QRect(self.input_x, 180, self.iwidth, self.iheigth))
         self.genreEdit.setObjectName("genreEdit")
 
         self.durationEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.durationEdit.setGeometry(QtCore.QRect(170, 230, self.iwidth, self.iheigth))
+        self.durationEdit.setGeometry(QtCore.QRect(self.input_x, 230, self.iwidth, self.iheigth))
         self.durationEdit.setObjectName("durationEdit")
 
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(170, 280, self.iwidth, 70))
+        self.textEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
         self.textEdit.setObjectName("textEdit")
 
         self.addDessEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.addDessEdit.setGeometry(QtCore.QRect(170, 370, self.iwidth, self.iheigth))
+        self.addDessEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
         self.addDessEdit.setObjectName("addDessEdit")
 
         # Buttons
