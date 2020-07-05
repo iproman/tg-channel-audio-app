@@ -9,6 +9,7 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+index.spec
 
 # pytest
 .pytest_cache
