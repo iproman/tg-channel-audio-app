@@ -117,6 +117,12 @@ class Ui_MainWindow(object):
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
 
+        # Addition
+        self.statusLabel = QtWidgets.QLabel(self.centralwidget)
+        self.statusLabel.setGeometry(QtCore.QRect(50, 450, self.lwidth, self.lheight))
+        self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
+        self.statusLabel.setObjectName("statusLabel")
+
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -189,6 +195,7 @@ class Ui_MainWindow(object):
             add_desc_input = "\n%s" % self.add_desc
             text_file.write(add_desc_input)
 
+        self.statusLabel.setText('Файл создан')
         text_file.close()
 
     def clear(self):
@@ -199,6 +206,8 @@ class Ui_MainWindow(object):
         self.durationEdit.clear()
         self.textEdit.clear()
         self.addDessEdit.clear()
+
+        self.statusLabel.setText('Очищено')
 
 
 if __name__ == "__main__":
