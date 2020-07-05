@@ -101,10 +101,15 @@ class Ui_MainWindow(object):
         self.addDessEdit.setObjectName("addDessEdit")
 
         # Buttons
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(250, 420, 100, 30))
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.convert)
+        self.pushBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.pushBtn.setGeometry(QtCore.QRect(200, 420, 100, 30))
+        self.pushBtn.setObjectName("pushBtn")
+        self.pushBtn.clicked.connect(self.convert)
+
+        self.clearBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.clearBtn.setGeometry(QtCore.QRect(300, 420, 100, 30))
+        self.clearBtn.setObjectName("clearBtn")
+        self.clearBtn.clicked.connect(self.clear)
 
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
@@ -129,7 +134,8 @@ class Ui_MainWindow(object):
         self.durationLabel.setText(_translate("MainWindow", "Продолжительность:"))
         self.descLabel.setText(_translate("MainWindow", "Описание:"))
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
-        self.pushButton.setText(_translate("MainWindow", "Подготовить"))
+        self.pushBtn.setText(_translate("MainWindow", "Подготовить"))
+        self.clearBtn.setText(_translate("MainWindow", "Очистить"))
 
     def convert(self):
 
@@ -169,6 +175,15 @@ class Ui_MainWindow(object):
             text_file.write(add_desc_input)
 
         text_file.close()
+
+    def clear(self):
+        self.nameEdit.clear()
+        self.authorEdit.clear()
+        self.readEdit.clear()
+        self.genreEdit.clear()
+        self.durationEdit.clear()
+        self.textEdit.clear()
+        self.addDessEdit.clear()
 
 
 if __name__ == "__main__":
