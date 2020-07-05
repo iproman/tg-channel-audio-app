@@ -11,6 +11,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+    def __init__(self):
+        self.name = ''
+        self.author = ''
+        self.reader = ''
+        self.genre = ''
+        self.desc = ''
+        self.add_desc = ''
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 500)
@@ -102,6 +110,41 @@ class Ui_MainWindow(object):
         self.descLabel.setText(_translate("MainWindow", "Описание:"))
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
         self.pushButton.setText(_translate("MainWindow", "Подготовить"))
+
+    def convert(self):
+
+        self.name = self.nameEdit.text()
+        self.author = self.authorEdit.text()
+        self.reader = self.readEdit.text()
+        self.genre = self.genreEdit.text()
+        self.desc = self.textEdit.toPlainText()
+        self.add_desc = self.addDessEdit.text()
+
+        self.saveToFile()
+
+    def saveToFile(self):
+        text_file = open('audiobook.txt', 'w', encoding="UTF_8")
+
+        if self.name:
+            name_input = "__%s__\n\n" % self.name
+            text_file.write(name_input)
+        if self.author:
+            author_input = "**Автор**: %s\n" % self.author
+            text_file.write(author_input)
+        if self.reader:
+            reader_input = "**Исполняет**: %s\n" % self.reader
+            text_file.write(reader_input)
+        if self.genre:
+            genre_input = "**Жанр**: %s\n" % self.genre
+            text_file.write(genre_input)
+        if self.desc:
+            desc_input = "\n**Описание**:\n%s\n" % self.desc
+            text_file.write(desc_input)
+        if self.add_desc:
+            add_desc_input = "\n%s" % self.add_desc
+            text_file.write(add_desc_input)
+
+        text_file.close()
 
 
 if __name__ == "__main__":
