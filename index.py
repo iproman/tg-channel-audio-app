@@ -104,13 +104,17 @@ class Ui_MainWindow(object):
 
         # Buttons
         self.pushBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.pushBtn.setGeometry(QtCore.QRect(200, 420, 100, 30))
+        self.pushBtn.setGeometry(QtCore.QRect(195, 420, 100, 30))
         self.pushBtn.setObjectName("pushBtn")
+        self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
+                                   "QPushButton:hover{background-color: #b3d3ea;}")
         self.pushBtn.clicked.connect(self.convert)
 
         self.clearBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.clearBtn.setGeometry(QtCore.QRect(300, 420, 100, 30))
+        self.clearBtn.setGeometry(QtCore.QRect(305, 420, 100, 30))
         self.clearBtn.setObjectName("clearBtn")
+        self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
+                                    "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
 
         # MenuBar, statusBar
