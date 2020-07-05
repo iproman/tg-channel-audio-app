@@ -7,6 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 
+import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -150,7 +152,16 @@ class Ui_MainWindow(object):
         self.saveToFile()
 
     def saveToFile(self):
-        text_file = open('audiobook.txt', 'w', encoding="UTF_8")
+        file_name = 'audiobook.txt'
+
+        username = os.getlogin()
+        if username:
+            folder = f'C:\\Users\\{username}\\Desktop\\'
+            path = folder + file_name
+        else:
+            path = file_name
+
+        text_file = open(path, 'w', encoding="UTF_8")
 
         if self.name:
             name_input = "__%s__\n\n" % self.name
