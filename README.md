@@ -1,5 +1,5 @@
-#Get text for tg audio book channel
-Simple app for converting text to telegram audio book channel.
+<h1 align="center">Get text for tg audio book channel</h1>
+<p align="center">Simple app for converting text to telegram audio book channel.</p>
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Simple app for converting text to telegram audio book channel.
  - pyqt5-tools
  - PyInstaller
 
-*PyQt5 runs app with python. PyInstaller creates exe*
+*PyQt5 runs app with python. PyInstaller creates exe.*
 
 ### Installing Via [GitHub](https://github.com/iproman/tg-channel-audio-app)
 ```
