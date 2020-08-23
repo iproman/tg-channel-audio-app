@@ -178,7 +178,7 @@ class Ui_MainWindow(object):
 
         # Buttons
         self.prepareBtn.clicked.connect(self.convert)
-        self.clearBtn.clicked.connect(self.clear)
+        self.clearBtn.clicked.connect(self.clear_inputs)
         self.trackerBtn.clicked.connect(self.parse_data)
 
         # MenuBar, statusBar
@@ -255,7 +255,7 @@ class Ui_MainWindow(object):
         text_file.close()
 
     # Clear inputs
-    def clear(self):
+    def clear_inputs(self):
         self.nameEdit.clear()
         self.authorEdit.clear()
         self.readEdit.clear()
