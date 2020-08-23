@@ -67,10 +67,10 @@ class Ui_MainWindow(object):
         self.durationLabel.setFont(font)
         self.durationLabel.setObjectName("durationLabel")
 
-        self.descLabel = QtWidgets.QLabel(self.centralwidget)
-        self.descLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
-        self.descLabel.setFont(font)
-        self.descLabel.setObjectName("descLabel")
+        self.descriptionLabel = QtWidgets.QLabel(self.centralwidget)
+        self.descriptionLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
+        self.descriptionLabel.setFont(font)
+        self.descriptionLabel.setObjectName("descriptionLabel")
 
         self.addDessLabel = QtWidgets.QLabel(self.centralwidget)
         self.addDessLabel.setGeometry(QtCore.QRect(self.label_x, 370, self.lwidth, self.lheight))
@@ -103,13 +103,13 @@ class Ui_MainWindow(object):
         self.durationEdit.setGeometry(QtCore.QRect(self.input_x, 230, self.iwidth, self.iheigth))
         self.durationEdit.setObjectName("durationEdit")
 
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
-        self.textEdit.setObjectName("textEdit")
+        self.descriptionEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.descriptionEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
+        self.descriptionEdit.setObjectName("descriptionEdit")
 
-        self.addDessEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.addDessEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
-        self.addDessEdit.setObjectName("addDessEdit")
+        self.additionDescripionEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.additionDescripionEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
+        self.additionDescripionEdit.setObjectName("additionDescripionEdit")
 
         self.trackerEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 500, self.iwidth, self.iheigth))
@@ -164,7 +164,7 @@ class Ui_MainWindow(object):
         self.readlabel.setText(_translate("MainWindow", "Исполняет:"))
         self.genreLabel.setText(_translate("MainWindow", "Жанр:"))
         self.durationLabel.setText(_translate("MainWindow", "Продолжительность:"))
-        self.descLabel.setText(_translate("MainWindow", "Описание:"))
+        self.descriptionLabel.setText(_translate("MainWindow", "Описание:"))
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
         self.pushBtn.setText(_translate("MainWindow", "Подготовить"))
         self.clearBtn.setText(_translate("MainWindow", "Очистить"))
@@ -178,8 +178,8 @@ class Ui_MainWindow(object):
         self.reader = self.readEdit.text()
         self.genre = self.genreEdit.text()
         self.duration = self.durationEdit.text()
-        self.desc = self.textEdit.toPlainText()
-        self.add_desc = self.addDessEdit.text()
+        self.desc = self.descriptionEdit.toPlainText()
+        self.add_desc = self.additionDescripionEdit.text()
 
         self.saveToFile()
 
@@ -228,8 +228,8 @@ class Ui_MainWindow(object):
         self.readEdit.clear()
         self.genreEdit.clear()
         self.durationEdit.clear()
-        self.textEdit.clear()
-        self.addDessEdit.clear()
+        self.descriptionEdit.clear()
+        self.additionDescripionEdit.clear()
 
         self.status('Очищено')
 
