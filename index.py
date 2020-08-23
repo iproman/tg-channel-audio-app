@@ -256,6 +256,22 @@ class Ui_MainWindow(object):
             return refined(body.span.get_text(strip=True))
         return refined(body.find('span', text=text).next_sibling)
 
+    def block_inputs_btn(self, boolean=False):
+        if boolean:
+            boolean = False
+        else:
+            boolean = True
+
+        self.nameEdit.setEnabled(boolean)
+        self.authorEdit.setEnabled(boolean)
+        self.readEdit.setEnabled(boolean)
+        self.genreEdit.setEnabled(boolean)
+        self.durationEdit.setEnabled(boolean)
+        self.descriptionEdit.setEnabled(boolean)
+        self.additionDescripionEdit.setEnabled(boolean)
+
+        # Todo: block buttons
+
 
 # Remove symbols
 def refined(text):
