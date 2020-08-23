@@ -14,6 +14,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from bs4 import BeautifulSoup
 
 
+class Parser(object):
+    def __init__(self, body):
+        self.body = body
+
+    # Get input text
+    def parse_input(self, text=''):
+        # find text
+        if not text:
+            return self.refined(self.body.span.get_text(strip=True))
+        return self.refined(self.body.find('span', text=text).next_sibling)
+
+    # Remove symbols
+    def refined(self, text):
+        # : First name : Last name
+        return text.replace(':', '').strip()
+
+
 class Ui_MainWindow(object):
     def __init__(self):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -358,20 +375,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-
-class Parser(object):
-    def __init__(self, body):
-        self.body = body
-
-    # Get input text
-    def parse_input(self, text=''):
-        # find text
-        if not text:
-            return self.refined(self.body.span.get_text(strip=True))
-        return self.refined(self.body.find('span', text=text).next_sibling)
-
-    # Remove symbols
-    def refined(self, text):
-        # : First name : Last name
-        return text.replace(':', '').strip()
