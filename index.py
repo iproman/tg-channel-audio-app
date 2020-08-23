@@ -269,6 +269,48 @@ class Ui_MainWindow(object):
             return refined(body.span.get_text(strip=True))
         return refined(body.find('span', text=text).next_sibling)
 
+    def parse_data(self):
+        # Block input/btn
+        self.block_inputs_btn(True)
+
+        # Send url and get soup
+        url = self.trackerEdit.text()
+        soup = self.get_soup(url)
+
+        # Set body
+        body = soup.find('div', {'class': 'post_body'})
+
+        # Text to find
+        data = {
+            'name': 'Имя автора',
+            'last_name': 'Фамилия автора',
+            'reader': 'Исполнитель',
+            'genre': 'Жанр',
+            'time': 'Время звучания',
+            'description': 'Описание'
+        }
+
+        # Get text from inputs
+        name = self.parse_input(body)
+        author_first_name = self.parse_input(body, data['name'])
+        author_last_name = self.parse_input(body, data['last_name'])
+        reader = self.parse_input(body, data['reader'])
+        genre = self.parse_input(body, data['genre'])
+        time = self.parse_input(body, data['time'])
+        description = self.parse_input(body, data['description'])
+
+        # Set text to inputs
+        self.nameEdit.setText(name)
+        self.authorEdit.setText(f'{author_first_name} {author_last_name}')
+        self.readEdit.setText(reader)
+        self.genreEdit.setText(genre)
+        self.durationEdit.setText(time)
+        self.descriptionEdit.setText(description)
+
+        self.status('Найдено')
+
+        self.block_inputs_btn(False)
+
     def block_inputs_btn(self, boolean=False):
         if boolean:
             boolean = False
