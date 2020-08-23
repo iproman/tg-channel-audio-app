@@ -45,6 +45,7 @@ class Ui_MainWindow(object):
 
         # Addition
         self.statusLabel = QtWidgets.QLabel(self.centralwidget)
+        self.lengthLabel = QtWidgets.QLabel(self.centralwidget)
 
         # MenuBar, statusBar
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -95,6 +96,7 @@ class Ui_MainWindow(object):
 
         # Addition
         self.statusLabel.setGeometry(QtCore.QRect(50, 420, self.lwidth, self.lheight))
+        self.lengthLabel.setGeometry(QtCore.QRect(450, 420, self.lwidth, self.lheight))
 
         # MenuBar, statusBar
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
@@ -128,13 +130,14 @@ class Ui_MainWindow(object):
 
         # Addition
         self.statusLabel.setObjectName("statusLabel")
+        self.lengthLabel.setObjectName("lengthLabel")
 
         # MenuBar, statusBar
         self.menubar.setObjectName("menubar")
         self.statusbar.setObjectName("statusbar")
 
+    # Set object styles
     def set_object_styles(self):
-
         font = QtGui.QFont()
         font.setPointSize(9)
 
@@ -157,6 +160,7 @@ class Ui_MainWindow(object):
                                       "QPushButton:hover{background-color: #cee4f4}")
         # Addition
         self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
+        self.lengthLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -266,7 +270,12 @@ class Ui_MainWindow(object):
     def status(self, text):
         self.statusLabel.setText(text)
 
-    # Get soup (html) from url.
+    # Set total input length
+    def input_length(self, length):
+        text = 'Total length: '
+        self.lengthLabel.setText(text + length)
+
+    # Get soup (html) from url
     def get_soup(self, url):
         try:
             r = requests.get(url)
@@ -278,6 +287,7 @@ class Ui_MainWindow(object):
         except Exception as msg:
             self.status(f'Not found:\n {str(msg)}')
 
+    # Parse and set data
     def parse_data(self):
         # Block input/btn
         self.block_inputs_btn(True)
