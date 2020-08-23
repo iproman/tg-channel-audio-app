@@ -126,7 +126,7 @@ class Ui_MainWindow(object):
         # Buttons
         self.prepareBtn.setObjectName("prepareBtn")
         self.clearBtn.setObjectName("clearBtn")
-        self.trackerBtn.setObjectName("clearBtn")
+        self.trackerBtn.setObjectName("trackerBtn")
 
         # Addition
         self.statusLabel.setObjectName("statusLabel")
