@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
         self.trackerEdit = QtWidgets.QLineEdit(self.centralwidget)
 
         # Buttons
-        self.pushBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.prepareBtn = QtWidgets.QPushButton(self.centralwidget)
         self.clearBtn = QtWidgets.QPushButton(self.centralwidget)
         self.trackerBtn = QtWidgets.QPushButton(self.centralwidget)
 
@@ -90,7 +90,7 @@ class Ui_MainWindow(object):
         self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 550, self.iwidth, self.iheigth))
 
         # Buttons
-        self.pushBtn.setGeometry(QtCore.QRect(195, 470, 100, 30))
+        self.prepareBtn.setGeometry(QtCore.QRect(195, 470, 100, 30))
         self.clearBtn.setGeometry(QtCore.QRect(305, 470, 100, 30))
         self.trackerBtn.setGeometry(QtCore.QRect(250, 600, 100, 30))
 
@@ -124,7 +124,7 @@ class Ui_MainWindow(object):
         self.trackerEdit.setObjectName("trackerEdit")
 
         # Buttons
-        self.pushBtn.setObjectName("pushBtn")
+        self.prepareBtn.setObjectName("prepareBtn")
         self.clearBtn.setObjectName("clearBtn")
         self.trackerBtn.setObjectName("clearBtn")
 
@@ -152,8 +152,8 @@ class Ui_MainWindow(object):
         self.trackerLabel.setFont(font)
 
         # Buttons
-        self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
-                                   "QPushButton:hover{background-color: #b3d3ea;}")
+        self.prepareBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
+                                      "QPushButton:hover{background-color: #b3d3ea;}")
         self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
@@ -177,7 +177,7 @@ class Ui_MainWindow(object):
         self.set_object_styles()
 
         # Buttons
-        self.pushBtn.clicked.connect(self.convert)
+        self.prepareBtn.clicked.connect(self.convert)
         self.clearBtn.clicked.connect(self.clear)
         self.trackerBtn.clicked.connect(self.parse_data)
 
@@ -200,7 +200,7 @@ class Ui_MainWindow(object):
         self.durationLabel.setText(_translate("MainWindow", "Продолжительность:"))
         self.descriptionLabel.setText(_translate("MainWindow", "Описание:"))
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
-        self.pushBtn.setText(_translate("MainWindow", "Подготовить"))
+        self.prepareBtn.setText(_translate("MainWindow", "Подготовить"))
         self.clearBtn.setText(_translate("MainWindow", "Очистить"))
         self.trackerBtn.setText(_translate("MainWindow", "Спарсить"))
         self.trackerLabel.setText(_translate("MainWindow", "Трекер"))
