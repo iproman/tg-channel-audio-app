@@ -59,6 +59,7 @@ class Ui_MainWindow(object):
         self.prepareBtn = QtWidgets.QPushButton(self.centralwidget)
         self.clearBtn = QtWidgets.QPushButton(self.centralwidget)
         self.trackerBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.saveBtn = QtWidgets.QPushButton(self.centralwidget)
 
         # Addition
         self.statusLabel = QtWidgets.QLabel(self.centralwidget)
@@ -110,6 +111,7 @@ class Ui_MainWindow(object):
         self.prepareBtn.setGeometry(QtCore.QRect(195, 470, 100, 30))
         self.clearBtn.setGeometry(QtCore.QRect(305, 470, 100, 30))
         self.trackerBtn.setGeometry(QtCore.QRect(250, 600, 100, 30))
+        self.saveBtn.setGeometry(QtCore.QRect(450, 600, 100, 30))
 
         # Addition
         self.statusLabel.setGeometry(QtCore.QRect(50, 420, self.lwidth, self.lheight))
@@ -144,6 +146,7 @@ class Ui_MainWindow(object):
         self.prepareBtn.setObjectName("prepareBtn")
         self.clearBtn.setObjectName("clearBtn")
         self.trackerBtn.setObjectName("trackerBtn")
+        self.saveBtn.setObjectName("saveBtn")
 
         # Addition
         self.statusLabel.setObjectName("statusLabel")
@@ -175,6 +178,8 @@ class Ui_MainWindow(object):
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                       "QPushButton:hover{background-color: #cee4f4}")
+        self.saveBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
+                                   "QPushButton:hover{background-color: #cee4f4}")
         # Addition
         self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
         self.lengthLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
@@ -197,6 +202,7 @@ class Ui_MainWindow(object):
         self.prepareBtn.clicked.connect(self.convert)
         self.clearBtn.clicked.connect(self.clear_inputs)
         self.trackerBtn.clicked.connect(self.parse_data)
+        self.saveBtn.clicked.connect(self.saveToFile)
 
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
@@ -220,6 +226,7 @@ class Ui_MainWindow(object):
         self.prepareBtn.setText(_translate("MainWindow", "Подготовить"))
         self.clearBtn.setText(_translate("MainWindow", "Очистить"))
         self.trackerBtn.setText(_translate("MainWindow", "Спарсить"))
+        self.saveBtn.setText(_translate("MainWindow", "Сохранить"))
         self.trackerLabel.setText(_translate("MainWindow", "Трекер"))
 
     def convert(self):
