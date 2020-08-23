@@ -300,7 +300,7 @@ class Ui_MainWindow(object):
     # Set total input length
     def input_length(self, length):
         text = 'Total length: '
-        self.lengthLabel.setText(text + length)
+        self.lengthLabel.setText(text + str(length))
 
     # Get soup (html) from url
     def get_soup(self, url):
