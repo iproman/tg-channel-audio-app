@@ -203,6 +203,7 @@ class Ui_MainWindow(object):
         self.status('Файл создан')
         text_file.close()
 
+    # Clear inputs
     def clear(self):
         self.nameEdit.clear()
         self.authorEdit.clear()
@@ -229,6 +230,14 @@ class Ui_MainWindow(object):
 
         except Exception as msg:
             self.status(f'Not found:\n {str(msg)}')
+
+    # Get input text
+    def parse_input(self, body, text=''):
+        # find text
+        if not text:
+            return refined(body.span.get_text(strip=True))
+        return refined(body.find('span', text=text).next_sibling)
+
 
 # Remove symbols
 def refined(text):
