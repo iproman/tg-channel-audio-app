@@ -279,13 +279,6 @@ class Ui_MainWindow(object):
         except Exception as msg:
             self.status(f'Not found:\n {str(msg)}')
 
-    # Get input text
-    def parse_input(self, body, text=''):
-        # find text
-        if not text:
-            return refined(body.span.get_text(strip=True))
-        return refined(body.find('span', text=text).next_sibling)
-
     def parse_data(self):
         # Block input/btn
         self.block_inputs_btn(True)
@@ -308,13 +301,15 @@ class Ui_MainWindow(object):
         }
 
         # Get text from inputs
-        name = self.parse_input(body)
-        author_first_name = self.parse_input(body, data['name'])
-        author_last_name = self.parse_input(body, data['last_name'])
-        reader = self.parse_input(body, data['reader'])
-        genre = self.parse_input(body, data['genre'])
-        time = self.parse_input(body, data['time'])
-        description = self.parse_input(body, data['description'])
+        p = Parser(body)
+
+        name = p.parse_input()
+        author_first_name = p.parse_input(data['name'])
+        author_last_name = p.parse_input(data['last_name'])
+        reader = p.parse_input(data['reader'])
+        genre = p.parse_input(data['genre'])
+        time = p.parse_input(data['time'])
+        description = p.parse_input(data['description'])
 
         # Set text to inputs
         self.nameEdit.setText(name)
@@ -345,12 +340,6 @@ class Ui_MainWindow(object):
         # Todo: block buttons
 
 
-# Remove symbols
-def refined(text):
-    # : First name : Last name
-    return text.replace(':', '').strip()
-
-
 if __name__ == "__main__":
     import sys
 
@@ -360,3 +349,20 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+
+class Parser(object):
+    def __init__(self, body):
+        self.body = body
+
+    # Get input text
+    def parse_input(self, text=''):
+        # find text
+        if not text:
+            return self.refined(self.body.span.get_text(strip=True))
+        return self.refined(self.body.find('span', text=text).next_sibling)
+
+    # Remove symbols
+    def refined(self, text):
+        # : First name : Last name
+        return text.replace(':', '').strip()
