@@ -133,6 +133,31 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         self.statusbar.setObjectName("statusbar")
 
+    def set_object_styles(self):
+
+        font = QtGui.QFont()
+        font.setPointSize(9)
+
+        # Labels
+        self.nameLabel.setFont(font)
+        self.authorLabel.setFont(font)
+        self.readlabel.setFont(font)
+        self.genreLabel.setFont(font)
+        self.durationLabel.setFont(font)
+        self.descriptionLabel.setFont(font)
+        self.addDessLabel.setFont(font)
+        self.trackerLabel.setFont(font)
+
+        # Buttons
+        self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
+                                   "QPushButton:hover{background-color: #b3d3ea;}")
+        self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
+                                    "QPushButton:hover{background-color: #cee4f4}")
+        self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
+                                      "QPushButton:hover{background-color: #cee4f4}")
+        # Addition
+        self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 500)
@@ -141,41 +166,16 @@ class Ui_MainWindow(object):
         # Set object properties
         self.set_object_properties()
 
-        # Labels
-        font = QtGui.QFont()
-        font.setPointSize(9)
+        # Set object names
+        self.set_object_names()
 
-        self.nameLabel.setFont(font)
-
-        self.authorLabel.setFont(font)
-
-        self.readlabel.setFont(font)
-
-        self.genreLabel.setFont(font)
-
-        self.durationLabel.setFont(font)
-
-        self.descriptionLabel.setFont(font)
-
-        self.addDessLabel.setFont(font)
-
-        self.trackerLabel.setFont(font)
+        # Set object styles
+        self.set_object_styles()
 
         # Buttons
-        self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
-                                   "QPushButton:hover{background-color: #b3d3ea;}")
         self.pushBtn.clicked.connect(self.convert)
-
-        self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
-                                    "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
-
-        self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
-                                      "QPushButton:hover{background-color: #cee4f4}")
         self.trackerBtn.clicked.connect(self.parse_data)
-
-        # Addition
-        self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
 
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
