@@ -77,6 +77,11 @@ class Ui_MainWindow(object):
         self.addDessLabel.setFont(font)
         self.addDessLabel.setObjectName("addDessLabel")
 
+        self.trackerLabel = QtWidgets.QLabel(self.centralwidget)
+        self.trackerLabel.setGeometry(QtCore.QRect(self.label_x, 500, self.lwidth, self.lheight))
+        self.trackerLabel.setFont(font)
+        self.trackerLabel.setObjectName("trackerLabel")
+
         # Inputs
         self.nameEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.nameEdit.setGeometry(QtCore.QRect(self.input_x, 30, self.iwidth, self.iheigth))
@@ -106,6 +111,10 @@ class Ui_MainWindow(object):
         self.addDessEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
         self.addDessEdit.setObjectName("addDessEdit")
 
+        self.trackerEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 500, self.iwidth, self.iheigth))
+        self.trackerEdit.setObjectName("trackerEdit")
+
         # Buttons
         self.pushBtn = QtWidgets.QPushButton(self.centralwidget)
         self.pushBtn.setGeometry(QtCore.QRect(195, 420, 100, 30))
@@ -120,6 +129,13 @@ class Ui_MainWindow(object):
         self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
+
+        self.trackerBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.trackerBtn.setGeometry(QtCore.QRect(305, 550, 100, 30))
+        self.trackerBtn.setObjectName("clearBtn")
+        self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
+                                      "QPushButton:hover{background-color: #cee4f4}")
+        self.trackerBtn.clicked.connect(self.parse_data)
 
         # Addition
         self.statusLabel = QtWidgets.QLabel(self.centralwidget)
@@ -152,6 +168,8 @@ class Ui_MainWindow(object):
         self.addDessLabel.setText(_translate("MainWindow", "Доп описание:"))
         self.pushBtn.setText(_translate("MainWindow", "Подготовить"))
         self.clearBtn.setText(_translate("MainWindow", "Очистить"))
+        self.trackerBtn.setText(_translate("MainWindow", "Спарсить"))
+        self.trackerLabel.setText(_translate("MainWindow", "Трекер"))
 
     def convert(self):
 
