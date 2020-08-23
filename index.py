@@ -99,6 +99,40 @@ class Ui_MainWindow(object):
         # MenuBar, statusBar
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
 
+    # Set object names
+    def set_object_names(self):
+        # Labels
+        self.nameLabel.setObjectName("nameLabel")
+        self.authorLabel.setObjectName("authorLabel")
+        self.readlabel.setObjectName("readlabel")
+        self.genreLabel.setObjectName("genreLabel")
+        self.durationLabel.setObjectName("durationLabel")
+        self.descriptionLabel.setObjectName("descriptionLabel")
+        self.addDessLabel.setObjectName("addDessLabel")
+        self.trackerLabel.setObjectName("trackerLabel")
+
+        # Inputs
+        self.nameEdit.setObjectName("nameEdit")
+        self.authorEdit.setObjectName("authorEdit")
+        self.readEdit.setObjectName("readEdit")
+        self.genreEdit.setObjectName("genreEdit")
+        self.durationEdit.setObjectName("durationEdit")
+        self.descriptionEdit.setObjectName("descriptionEdit")
+        self.additionDescripionEdit.setObjectName("additionDescripionEdit")
+        self.trackerEdit.setObjectName("trackerEdit")
+
+        # Buttons
+        self.pushBtn.setObjectName("pushBtn")
+        self.clearBtn.setObjectName("clearBtn")
+        self.trackerBtn.setObjectName("clearBtn")
+
+        # Addition
+        self.statusLabel.setObjectName("statusLabel")
+
+        # MenuBar, statusBar
+        self.menubar.setObjectName("menubar")
+        self.statusbar.setObjectName("statusbar")
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 500)
@@ -112,73 +146,41 @@ class Ui_MainWindow(object):
         font.setPointSize(9)
 
         self.nameLabel.setFont(font)
-        self.nameLabel.setObjectName("nameLabel")
 
         self.authorLabel.setFont(font)
-        self.authorLabel.setObjectName("authorLabel")
 
         self.readlabel.setFont(font)
-        self.readlabel.setObjectName("readlabel")
 
         self.genreLabel.setFont(font)
-        self.genreLabel.setObjectName("genreLabel")
 
         self.durationLabel.setFont(font)
-        self.durationLabel.setObjectName("durationLabel")
 
         self.descriptionLabel.setFont(font)
-        self.descriptionLabel.setObjectName("descriptionLabel")
 
         self.addDessLabel.setFont(font)
-        self.addDessLabel.setObjectName("addDessLabel")
 
         self.trackerLabel.setFont(font)
-        self.trackerLabel.setObjectName("trackerLabel")
-
-        # Inputs
-        self.nameEdit.setObjectName("nameEdit")
-
-        self.authorEdit.setObjectName("authorEdit")
-
-        self.readEdit.setObjectName("readEdit")
-
-        self.genreEdit.setObjectName("genreEdit")
-
-        self.durationEdit.setObjectName("durationEdit")
-
-        self.descriptionEdit.setObjectName("descriptionEdit")
-
-        self.additionDescripionEdit.setObjectName("additionDescripionEdit")
-
-        self.trackerEdit.setObjectName("trackerEdit")
 
         # Buttons
-        self.pushBtn.setObjectName("pushBtn")
         self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
                                    "QPushButton:hover{background-color: #b3d3ea;}")
         self.pushBtn.clicked.connect(self.convert)
 
-        self.clearBtn.setObjectName("clearBtn")
         self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
 
-        self.trackerBtn.setObjectName("clearBtn")
         self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                       "QPushButton:hover{background-color: #cee4f4}")
         self.trackerBtn.clicked.connect(self.parse_data)
 
         # Addition
         self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
-        self.statusLabel.setObjectName("statusLabel")
 
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
-
-        self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
