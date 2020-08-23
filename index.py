@@ -199,7 +199,7 @@ class Ui_MainWindow(object):
         self.set_object_styles()
 
         # Buttons
-        self.prepareBtn.clicked.connect(self.convert)
+        self.prepareBtn.clicked.connect(self.prepare_text)
         self.clearBtn.clicked.connect(self.clear_inputs)
         self.trackerBtn.clicked.connect(self.parse_data)
         self.saveBtn.clicked.connect(self.saveToFile)
@@ -229,7 +229,11 @@ class Ui_MainWindow(object):
         self.saveBtn.setText(_translate("MainWindow", "Сохранить"))
         self.trackerLabel.setText(_translate("MainWindow", "Трекер"))
 
-    def convert(self):
+    # Prepare text
+    def prepare_text(self):
+        text = ''
+
+        # Get text from inputs
         self.name = self.nameEdit.text()
         self.author = self.authorEdit.text()
         self.reader = self.readEdit.text()
