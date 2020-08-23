@@ -212,6 +212,12 @@ class Ui_MainWindow(object):
         self.statusLabel.setText('Очищено')
 
 
+# Remove symbols
+def refined(text):
+    # : First name : Last name
+    return text.replace(':', '').strip()
+
+
 if __name__ == "__main__":
     import sys
 
