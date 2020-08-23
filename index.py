@@ -261,8 +261,6 @@ class Ui_MainWindow(object):
 
         self.final_text = text
 
-        self.saveToFile()
-
     # Write text to file.
     def saveToFile(self):
         file_name = 'audiobook.txt'
