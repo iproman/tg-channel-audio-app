@@ -261,6 +261,8 @@ class Ui_MainWindow(object):
 
         self.final_text = text
 
+        self.status('Text prepared')
+
     # Write text to file.
     def saveToFile(self):
         file_name = 'audiobook.txt'
@@ -276,7 +278,7 @@ class Ui_MainWindow(object):
 
         text_file.write(self.final_text)
 
-        self.status('Файл создан')
+        self.status('File created')
         text_file.close()
 
     # Clear inputs
@@ -310,7 +312,7 @@ class Ui_MainWindow(object):
                 self.status('Not found')
 
         except Exception as msg:
-            self.status(f'Not found:\n {str(msg)}')
+            self.status(f'Error :\n {str(msg)}')
 
     # Parse and set data
     def parse_data(self):
@@ -353,7 +355,7 @@ class Ui_MainWindow(object):
         self.durationEdit.setText(time)
         self.descriptionEdit.setText(description)
 
-        self.status('Найдено')
+        self.status('Parsed')
 
         self.block_inputs_btn(False)
 
