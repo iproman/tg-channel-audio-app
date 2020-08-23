@@ -85,6 +85,8 @@ class Ui_MainWindow(object):
         self.desc = ''
         self.add_desc = ''
 
+        self.final_text = ''
+
     # Set object properties
     def set_object_properties(self):
         # Labels
