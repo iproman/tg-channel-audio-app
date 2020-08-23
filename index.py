@@ -160,7 +160,7 @@ class Ui_MainWindow(object):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 500)
+        MainWindow.resize(600, 700)
         self.centralwidget.setObjectName("centralwidget")
 
         # Set object properties
@@ -202,7 +202,6 @@ class Ui_MainWindow(object):
         self.trackerLabel.setText(_translate("MainWindow", "Трекер"))
 
     def convert(self):
-
         self.name = self.nameEdit.text()
         self.author = self.authorEdit.text()
         self.reader = self.readEdit.text()
