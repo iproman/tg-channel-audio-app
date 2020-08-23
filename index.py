@@ -66,100 +66,115 @@ class Ui_MainWindow(object):
         self.desc = ''
         self.add_desc = ''
 
+    # Set object properties
+    def set_object_properties(self):
+        # Labels
+        self.nameLabel.setGeometry(QtCore.QRect(self.label_x, 30, self.lwidth, self.lheight))
+        self.authorLabel.setGeometry(QtCore.QRect(self.label_x, 80, self.lwidth, self.lheight))
+        self.readlabel.setGeometry(QtCore.QRect(self.label_x, 130, self.lwidth, self.lheight))
+        self.genreLabel.setGeometry(QtCore.QRect(self.label_x, 180, self.lwidth, self.lheight))
+        self.durationLabel.setGeometry(QtCore.QRect(self.label_x, 230, self.lwidth, self.lheight))
+        self.descriptionLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
+        self.addDessLabel.setGeometry(QtCore.QRect(self.label_x, 370, self.lwidth, self.lheight))
+        self.trackerLabel.setGeometry(QtCore.QRect(self.label_x, 500, self.lwidth, self.lheight))
+
+        # Inputs
+        self.nameEdit.setGeometry(QtCore.QRect(self.input_x, 30, self.iwidth, self.iheigth))
+        self.authorEdit.setGeometry(QtCore.QRect(self.input_x, 80, self.iwidth, self.iheigth))
+        self.readEdit.setGeometry(QtCore.QRect(self.input_x, 130, self.iwidth, self.iheigth))
+        self.genreEdit.setGeometry(QtCore.QRect(self.input_x, 180, self.iwidth, self.iheigth))
+        self.durationEdit.setGeometry(QtCore.QRect(self.input_x, 230, self.iwidth, self.iheigth))
+        self.descriptionEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
+        self.additionDescripionEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
+        self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 500, self.iwidth, self.iheigth))
+
+        # Buttons
+        self.pushBtn.setGeometry(QtCore.QRect(195, 420, 100, 30))
+        self.clearBtn.setGeometry(QtCore.QRect(305, 420, 100, 30))
+        self.trackerBtn.setGeometry(QtCore.QRect(305, 550, 100, 30))
+
+        # Addition
+        self.statusLabel.setGeometry(QtCore.QRect(50, 450, self.lwidth, self.lheight))
+
+        # MenuBar, statusBar
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(600, 500)
         self.centralwidget.setObjectName("centralwidget")
 
+        # Set object properties
+        self.set_object_properties()
+
         # Labels
         font = QtGui.QFont()
         font.setPointSize(9)
 
-        self.nameLabel.setGeometry(QtCore.QRect(self.label_x, 30, self.lwidth, self.lheight))
         self.nameLabel.setFont(font)
         self.nameLabel.setObjectName("nameLabel")
 
-        self.authorLabel.setGeometry(QtCore.QRect(self.label_x, 80, self.lwidth, self.lheight))
         self.authorLabel.setFont(font)
         self.authorLabel.setObjectName("authorLabel")
 
-        self.readlabel.setGeometry(QtCore.QRect(self.label_x, 130, self.lwidth, self.lheight))
         self.readlabel.setFont(font)
         self.readlabel.setObjectName("readlabel")
 
-        self.genreLabel.setGeometry(QtCore.QRect(self.label_x, 180, self.lwidth, self.lheight))
         self.genreLabel.setFont(font)
         self.genreLabel.setObjectName("genreLabel")
 
-        self.durationLabel.setGeometry(QtCore.QRect(self.label_x, 230, self.lwidth, self.lheight))
         self.durationLabel.setFont(font)
         self.durationLabel.setObjectName("durationLabel")
 
-        self.descriptionLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
         self.descriptionLabel.setFont(font)
         self.descriptionLabel.setObjectName("descriptionLabel")
 
-        self.addDessLabel.setGeometry(QtCore.QRect(self.label_x, 370, self.lwidth, self.lheight))
         self.addDessLabel.setFont(font)
         self.addDessLabel.setObjectName("addDessLabel")
 
-        self.trackerLabel.setGeometry(QtCore.QRect(self.label_x, 500, self.lwidth, self.lheight))
         self.trackerLabel.setFont(font)
         self.trackerLabel.setObjectName("trackerLabel")
 
         # Inputs
-        self.nameEdit.setGeometry(QtCore.QRect(self.input_x, 30, self.iwidth, self.iheigth))
         self.nameEdit.setObjectName("nameEdit")
 
-        self.authorEdit.setGeometry(QtCore.QRect(self.input_x, 80, self.iwidth, self.iheigth))
         self.authorEdit.setObjectName("authorEdit")
 
-        self.readEdit.setGeometry(QtCore.QRect(self.input_x, 130, self.iwidth, self.iheigth))
         self.readEdit.setObjectName("readEdit")
 
-        self.genreEdit.setGeometry(QtCore.QRect(self.input_x, 180, self.iwidth, self.iheigth))
         self.genreEdit.setObjectName("genreEdit")
 
-        self.durationEdit.setGeometry(QtCore.QRect(self.input_x, 230, self.iwidth, self.iheigth))
         self.durationEdit.setObjectName("durationEdit")
 
-        self.descriptionEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
         self.descriptionEdit.setObjectName("descriptionEdit")
 
-        self.additionDescripionEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
         self.additionDescripionEdit.setObjectName("additionDescripionEdit")
 
-        self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 500, self.iwidth, self.iheigth))
         self.trackerEdit.setObjectName("trackerEdit")
 
         # Buttons
-        self.pushBtn.setGeometry(QtCore.QRect(195, 420, 100, 30))
         self.pushBtn.setObjectName("pushBtn")
         self.pushBtn.setStyleSheet("QPushButton {background-color: #bddef6; color: #0e0e0e; font-size: 13px}"
                                    "QPushButton:hover{background-color: #b3d3ea;}")
         self.pushBtn.clicked.connect(self.convert)
 
-        self.clearBtn.setGeometry(QtCore.QRect(305, 420, 100, 30))
         self.clearBtn.setObjectName("clearBtn")
         self.clearBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                     "QPushButton:hover{background-color: #cee4f4}")
         self.clearBtn.clicked.connect(self.clear)
 
-        self.trackerBtn.setGeometry(QtCore.QRect(305, 550, 100, 30))
         self.trackerBtn.setObjectName("clearBtn")
         self.trackerBtn.setStyleSheet("QPushButton {background-color: #e6edf2; color: #0e0e0e; font-size: 13px}"
                                       "QPushButton:hover{background-color: #cee4f4}")
         self.trackerBtn.clicked.connect(self.parse_data)
 
         # Addition
-        self.statusLabel.setGeometry(QtCore.QRect(50, 450, self.lwidth, self.lheight))
         self.statusLabel.setStyleSheet("QLabel {color: #6c757d; font-size: 10px}")
         self.statusLabel.setObjectName("statusLabel")
 
         # MenuBar, statusBar
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
 
