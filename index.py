@@ -244,6 +244,23 @@ class Ui_MainWindow(object):
         self.desc = self.descriptionEdit.toPlainText()
         self.add_desc = self.additionDescripionEdit.text()
 
+        if self.name:
+            text += "__%s__\n\n" % self.name
+        if self.author:
+            text += "**Автор**: %s\n" % self.author
+        if self.reader:
+            text += "**Исполняет**: %s\n" % self.reader
+        if self.genre:
+            text += "**Жанр**: %s\n" % self.genre
+        if self.duration:
+            text += "**Продолжительность**: %s\n" % self.duration
+        if self.desc:
+            text += "\n**Описание**:\n%s\n" % self.desc
+        if self.add_desc:
+            text += "\n%s" % self.add_desc
+
+        self.final_text = text
+
         self.saveToFile()
 
     # Write text to file.
@@ -259,27 +276,7 @@ class Ui_MainWindow(object):
 
         text_file = open(path, 'w', encoding="UTF_8")
 
-        if self.name:
-            name_input = "__%s__\n\n" % self.name
-            text_file.write(name_input)
-        if self.author:
-            author_input = "**Автор**: %s\n" % self.author
-            text_file.write(author_input)
-        if self.reader:
-            reader_input = "**Исполняет**: %s\n" % self.reader
-            text_file.write(reader_input)
-        if self.genre:
-            genre_input = "**Жанр**: %s\n" % self.genre
-            text_file.write(genre_input)
-        if self.duration:
-            duration = "**Продолжительность**: %s\n" % self.duration
-            text_file.write(duration)
-        if self.desc:
-            desc_input = "\n**Описание**:\n%s\n" % self.desc
-            text_file.write(desc_input)
-        if self.add_desc:
-            add_desc_input = "\n%s" % self.add_desc
-            text_file.write(add_desc_input)
+        text_file.write(self.final_text)
 
         self.status('Файл создан')
         text_file.close()
