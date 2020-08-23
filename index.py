@@ -9,7 +9,9 @@
 
 import os
 
+import requests
 from PyQt5 import QtCore, QtGui, QtWidgets
+from bs4 import BeautifulSoup
 
 
 class Ui_MainWindow(object):
@@ -163,6 +165,7 @@ class Ui_MainWindow(object):
 
         self.saveToFile()
 
+    # Write text to file.
     def saveToFile(self):
         file_name = 'audiobook.txt'
 
@@ -211,9 +214,21 @@ class Ui_MainWindow(object):
 
         self.status('Очищено')
 
+    # Set status
     def status(self, text):
         self.statusLabel.setText(text)
 
+    # Get soup (html) from url.
+    def get_soup(self, url):
+        try:
+            r = requests.get(url)
+            if r:
+                return BeautifulSoup(r.content, 'html.parser')
+            else:
+                self.status('Not found')
+
+        except Exception as msg:
+            self.status(f'Not found:\n {str(msg)}')
 
 # Remove symbols
 def refined(text):
