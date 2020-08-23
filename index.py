@@ -197,7 +197,7 @@ class Ui_MainWindow(object):
             add_desc_input = "\n%s" % self.add_desc
             text_file.write(add_desc_input)
 
-        self.statusLabel.setText('Файл создан')
+        self.status('Файл создан')
         text_file.close()
 
     def clear(self):
@@ -209,7 +209,10 @@ class Ui_MainWindow(object):
         self.textEdit.clear()
         self.addDessEdit.clear()
 
-        self.statusLabel.setText('Очищено')
+        self.status('Очищено')
+
+    def status(self, text):
+        self.statusLabel.setText(text)
 
 
 # Remove symbols
