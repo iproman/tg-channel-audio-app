@@ -76,7 +76,7 @@ class Ui_MainWindow(object):
         self.durationLabel.setGeometry(QtCore.QRect(self.label_x, 230, self.lwidth, self.lheight))
         self.descriptionLabel.setGeometry(QtCore.QRect(self.label_x, 280, self.lwidth, self.lheight))
         self.addDessLabel.setGeometry(QtCore.QRect(self.label_x, 370, self.lwidth, self.lheight))
-        self.trackerLabel.setGeometry(QtCore.QRect(self.label_x, 500, self.lwidth, self.lheight))
+        self.trackerLabel.setGeometry(QtCore.QRect(self.label_x, 550, self.lwidth, self.lheight))
 
         # Inputs
         self.nameEdit.setGeometry(QtCore.QRect(self.input_x, 30, self.iwidth, self.iheigth))
@@ -86,15 +86,15 @@ class Ui_MainWindow(object):
         self.durationEdit.setGeometry(QtCore.QRect(self.input_x, 230, self.iwidth, self.iheigth))
         self.descriptionEdit.setGeometry(QtCore.QRect(self.input_x, 280, self.iwidth, 70))
         self.additionDescripionEdit.setGeometry(QtCore.QRect(self.input_x, 370, self.iwidth, self.iheigth))
-        self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 500, self.iwidth, self.iheigth))
+        self.trackerEdit.setGeometry(QtCore.QRect(self.input_x, 550, self.iwidth, self.iheigth))
 
         # Buttons
-        self.pushBtn.setGeometry(QtCore.QRect(195, 420, 100, 30))
-        self.clearBtn.setGeometry(QtCore.QRect(305, 420, 100, 30))
-        self.trackerBtn.setGeometry(QtCore.QRect(305, 550, 100, 30))
+        self.pushBtn.setGeometry(QtCore.QRect(195, 470, 100, 30))
+        self.clearBtn.setGeometry(QtCore.QRect(305, 470, 100, 30))
+        self.trackerBtn.setGeometry(QtCore.QRect(250, 600, 100, 30))
 
         # Addition
-        self.statusLabel.setGeometry(QtCore.QRect(50, 450, self.lwidth, self.lheight))
+        self.statusLabel.setGeometry(QtCore.QRect(50, 420, self.lwidth, self.lheight))
 
         # MenuBar, statusBar
         self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
