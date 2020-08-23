@@ -77,14 +77,6 @@ class Ui_MainWindow(object):
         self.label_x = 50
         self.input_x = 200
 
-        self.name = ''
-        self.author = ''
-        self.reader = ''
-        self.genre = ''
-        self.duration = ''
-        self.desc = ''
-        self.add_desc = ''
-
         self.final_text = ''
 
     # Set object properties
@@ -236,28 +228,30 @@ class Ui_MainWindow(object):
         text = ''
 
         # Get text from inputs
-        self.name = self.nameEdit.text()
-        self.author = self.authorEdit.text()
-        self.reader = self.readEdit.text()
-        self.genre = self.genreEdit.text()
-        self.duration = self.durationEdit.text()
-        self.desc = self.descriptionEdit.toPlainText()
-        self.add_desc = self.additionDescripionEdit.text()
+        data = {
+            'name': self.nameEdit.text(),
+            'author': self.authorEdit.text(),
+            'reader': self.readEdit.text(),
+            'genre': self.genreEdit.text(),
+            'duration': self.durationEdit.text(),
+            'desc': self.descriptionEdit.toPlainText(),
+            'add_desc': self.additionDescripionEdit.text()
+        }
 
-        if self.name:
-            text += "__%s__\n\n" % self.name
-        if self.author:
-            text += "**Автор**: %s\n" % self.author
-        if self.reader:
-            text += "**Исполняет**: %s\n" % self.reader
-        if self.genre:
-            text += "**Жанр**: %s\n" % self.genre
-        if self.duration:
-            text += "**Продолжительность**: %s\n" % self.duration
-        if self.desc:
-            text += "\n**Описание**:\n%s\n" % self.desc
-        if self.add_desc:
-            text += "\n%s" % self.add_desc
+        if data['name']:
+            text += "__%s__\n\n" % data['name']
+        if data['author']:
+            text += "**Автор**: %s\n" % data['author']
+        if data['reader']:
+            text += "**Исполняет**: %s\n" % data['reader']
+        if data['genre']:
+            text += "**Жанр**: %s\n" % data['genre']
+        if data['duration']:
+            text += "**Продолжительность**: %s\n" % data['duration']
+        if data['desc']:
+            text += "\n**Описание**:\n%s\n" % data['desc']
+        if data['add_desc']:
+            text += "\n%s" % data['add_desc']
 
         self.final_text = text
 
