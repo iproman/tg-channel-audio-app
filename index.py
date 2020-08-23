@@ -257,6 +257,8 @@ class Ui_MainWindow(object):
 
         self.status('Text prepared')
 
+        self.input_length(len(text))
+
     # Write text to file.
     def saveToFile(self):
         file_name = 'audiobook.txt'
@@ -293,6 +295,11 @@ class Ui_MainWindow(object):
 
     # Set total input length
     def input_length(self, length):
+        if length > 1024:
+            self.lengthLabel.setStyleSheet("QLabel {color: #c75450;}")
+        else:
+            self.lengthLabel.setStyleSheet("QLabel {color: #499c54;}")
+
         text = 'Total length: '
         self.lengthLabel.setText(text + str(length))
 
